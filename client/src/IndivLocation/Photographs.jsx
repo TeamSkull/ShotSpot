@@ -14,7 +14,7 @@ class Photographs extends React.Component {
        
         <h3 className = "photographText"> Photographs </h3>
           <div className="image_grid">
-           <Carousel slidesToShow={3} decorators={Carousel.getDefaultProps().decorators.slice(0, 2)}>
+           <Carousel slidesToShow={1} decorators={Carousel.getDefaultProps().decorators.slice(0, 2)}>
             {(this.props.photos) ? this.props.photos.map((photo) => {
              return (
               <div key={photo.uri} className="centerIndiv">
