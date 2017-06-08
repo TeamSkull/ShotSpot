@@ -38,6 +38,7 @@
     "react-masonry-component": "^5.0.7",
     "react-tap-event-plugin": "^2.0.1",
     "request": "^2.81.0",
+    "semantic-ui-react": "^0.68.5",
     "shortid": "^2.2.8",
     "unique-filename": "^1.1.0",
     "webpack": "^2.4.1"
