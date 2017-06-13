@@ -10,15 +10,15 @@ class Photographs extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid" id="photographs">
        
         <h3 className = "photographText"> Photographs </h3>
-          <div className="image_grid">
-           <Carousel slidesToShow={3} decorators={Carousel.getDefaultProps().decorators.slice(0, 2)}>
+          <div className="container-fluid-full" id="photo-grid">
+           <Carousel slidesToShow={3} slidesToScroll={3} cellSpacing={150} decorators={Carousel.getDefaultProps().decorators.slice(0, 2)}>
             {(this.props.photos) ? this.props.photos.map((photo, i) => {
              return (
               <div key={i} className="centerIndiv">
-                <img key={i} src = {photo.uri} />
+                <img key={i} src = {photo.uri} style={{height:250, width: 400}}/>
               </div>
           );
         }) : console.log('There are no photos yet to display for this location.')}

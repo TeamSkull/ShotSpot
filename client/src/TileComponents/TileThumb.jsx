@@ -7,16 +7,16 @@ class TileThumb extends React.Component {
 
   render() {
     return (
+
       <div onClick={() => this.props.locationSelect(this.props.id)}>
-        <figure>
-          <img src={this.props.photo} />
-          <figcaption>
-            {this.props.name}
-          </figcaption>
-        </figure>
+       <div className="img__wrap">
+           <img className="img__img" src={this.props.photo}  style={{height:200, width: 300}}/>
+          <p className ="img__description" >{this.props.name}</p>
+      </div>
       </div>
     );
   }
 }
 
 export default TileThumb;
+

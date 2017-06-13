@@ -9,13 +9,13 @@ class Comments extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3 className="commentText"> Comment Section: </h3>
+      <div className="container-fluid">
+        <h3 className="commentText"> Comments </h3>
         {(this.props.comments) ? this.props.comments.map((comments, i) => {
           return (
             <div key={i}>
-              <h3 className="commentText"> Username: {comments.username} </h3>
-              <h3 className="commentText"> {comments.content}</h3>
+              <a className="username"> <i className="user icon"></i>{comments.username} </a>
+              <h3 className="user-comment"> {comments.content}</h3>
             </div>
           );
         }) : console.log('There are no comments yet for this location')}

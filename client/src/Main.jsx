@@ -23,7 +23,6 @@ class Main extends React.Component {
       method: 'post',
       data: {search: this.state.searchValue}
     }).then((results) => {
-      console.log('This is the result from the axios call in Main.jsx: ', results);
       this.setState({Latitude: results.data.Latitude, Longitude: results.data.Longitude, submitted: results.data.Search});
     }).catch((error) => {
       console.log('This is an error from the axios call in Main.jsx: ', error);
@@ -34,8 +33,10 @@ class Main extends React.Component {
   render() {
     if (this.state.submitted) {
       let coordinates = {latitude: this.state.Latitude, longitude: this.state.Longitude};
+      let filterVal = {filter: 'View All Categories'}
       const stringified = queryString.stringify(coordinates);
-      return <Redirect push to={{pathname: '/TilePage/' + stringified, state: {searchedLocation: this.state.searchValue, Latitude: this.state.Latitude, Longitude: this.state.Longitude, stringy: stringified}}} />;
+      const stringfil = queryString.stringify(filterVal);
+      return <Redirect push to={{pathname: '/TilePage/' + stringified, state: {searchedLocation: this.state.searchValue, Latitude: this.state.Latitude, Longitude: this.state.Longitude, stringy: stringified, filter: stringfil}}} />;
     }
     return (
       <div className="container" id="home">

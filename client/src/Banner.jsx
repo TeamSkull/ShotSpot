@@ -8,9 +8,7 @@ class Banner extends React.Component {
   render() {
     return (
       <div className="container" id="banner">
-
             <b>SpotShots</b>
-  
       </div>
     );
   }
