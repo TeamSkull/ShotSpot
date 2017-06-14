@@ -5,6 +5,7 @@ import _ from 'lodash';
 import Main from './Main.jsx';
 import TilePage from './TilePage.jsx';
 import ImageUpload from './ImageUpload.jsx';
+import PhotoUpload from './PhotoUpload.jsx';
 import SignIn from './SignIn.jsx';
 import Login from './Login.jsx';
 import IndivComponent from './IndivComponent.jsx'
@@ -42,6 +43,7 @@ ReactDOM.render(
     <Route path="/TilePage/:id" component={TilePage} />
     <Route path="/Location/:id" component={IndivComponent} />
     <Route path="/ImageUpload" component={ImageUpload} />
+    <Route path="/PhotoUpload" component={PhotoUpload} />
     <Route path="/SignIn" component={SignIn} />
     <Route path="/Login" component={Login} />
     <Route path="/BigMap/:id" component={BigMap} />

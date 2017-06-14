@@ -85,12 +85,16 @@ class TilePage extends React.Component {
       return <Redirect push to={{pathname: '/Location/' + this.state.locSelect + '/' + this.props.location.state.stringy, state: {locSelect: this.state.locSelect, Latitude: this.props.location.state.Latitude, Longitude: this.props.location.state.Longitude}}} />;
     } else {
       return (
+
         <div id="tile">
+        <Navigation />
           <MapView searchCoordinates={this.state.searchCoordinates}/>
          <div className="container-fluid-fullwidth">
+         <h4 onClick={this.handleMapClick.bind(this)}>Click me for mapview!</h4>
           <div className="searched-location">
           {this.props.location.state.searchedLocation}
           </div>
+
           <div className="explore">
           </div>
            <Filter coordObjs={this.state.objects} initValue={filterInitVal} handleChangeFilter={this.handleChangeFilter} />
@@ -100,9 +104,9 @@ class TilePage extends React.Component {
             options={masonryOptions}
           >
 
-          {/*<h2 onClick={this.handleMapClick.bind(this)}>Click me for mapview!</h2>*/}
+          
          
-          {/*<Navigation />*/}
+          
            {(this.state.objects !== ['...Loading']) ? tempObjects.map((object) => {
             return (
               <div key={object.coverPhoto}>

@@ -34,6 +34,7 @@
     "query-string": "^4.3.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-dropzone": "^3.13.2",
     "react-google-maps": "^6.3.0",
     "react-leaflet": "^1.2.1",
     "react-masonry-component": "^5.0.7",
