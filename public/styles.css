@@ -9,7 +9,7 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
   margin: 60px;
-  margin-left: 550px;
+  margin-left: 525px;
 
 }
 #banner {
@@ -173,7 +173,19 @@ body {
   letter-spacing: 4px;
 
 }
+#image-upload {
+  padding-top: 15px;
+  padding-left: 20px;
+  background-color: gray;
+  padding-bottom: 100%;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.drop-files {
+  padding-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
 #username {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
@@ -236,9 +248,14 @@ body {
 }
 
 .Mapnotifier {
-  margin: 10px;
+  margin: 15px;
 }
 
+#add-location-input {
+  margin-left: 15px;
+  width: 175px;
+  height: 40px;
+}
 input.userComment {
   max-width: 100px;
 }
@@ -256,6 +273,18 @@ input.submitComment {
     max-width: 100px;
 }
 
+#location-name-big-map {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+#location-photo-big-map {
+  margin-bottom: 0px;
+}
+
 .popinput {
   background-color: #f3f5f6 ;
   max-width: 150px;
@@ -268,6 +297,11 @@ input.submitComment {
   font-size: 10px;
   margin-top: 10px;
 
+}
+
+hr {
+   height: .1px;
+   border: none;
 }
 
 #comment-form {
@@ -310,8 +344,8 @@ input[type="text"]{
 .locations-masonry {
   display: flex;
   flex-flow: row wrap;
-  margin-left: -70px;
-  margin-right: 30px;
+/*  margin-left: -70px;
+  margin-right: 0px;*/
   margin-bottom: 50px;
 }
 

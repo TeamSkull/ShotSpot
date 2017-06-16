@@ -133,9 +133,9 @@ class BigMap extends React.Component {
                 <Popup>
                   <span>
                     <form id="input-form">
-                      <input onChange={this.locationPopupText} placeholder="Enter location name"></input>
+                      <input className="ui input" id="add-location-input"onChange={this.locationPopupText} placeholder="Enter location name"></input>
                       <Filter className="PopFilter" initValue={filterPopupInitVal} handleChangeFilter={this.handleChangePopupFilter}/>
-                      <input onClick={this.popupSubmit} type="submit" className="ui teal button" id="pop-input-button"></input>
+                      <input onClick={this.popupSubmit} type="submit" value="Add Location"className="ui teal button" id="pop-input-button"></input>
                     </form>
                   </span>
                 </Popup>
@@ -145,7 +145,7 @@ class BigMap extends React.Component {
                 <div key={i}>
                   <Marker position={[location.coordinates.latitude, location.coordinates.longitude]}>
                       <Popup>
-                        <span><img onClick={this.handlePopImageClick.bind(this,location.id)} src={location.coverPhoto} />> <hr/> {location.name}</span>
+                        <span><img onClick={this.handlePopImageClick.bind(this,location.id)} src={location.coverPhoto} id="location-photo-big-map"/> <hr/> <h id="location-name-big-map">{location.name}</h></span>
                       </Popup>
                   </Marker>
                 </div>
