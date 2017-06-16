@@ -5,6 +5,13 @@ body {
   background-color: #f3f5f6;
 }
 
+#shot-spots-description {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 60px;
+  margin-left: 525px;
+
+}
 #banner {
   background-image: url('./images/mountain_background.jpg');
   background-size: cover;
@@ -27,17 +34,199 @@ body {
   padding-left: 20px;
   color: white;
   letter-spacing: 3.5px;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 900;
+  letter-spacing: 4px;
 
 }
 
+
+#signin{
+  background-image: url('./images/SignIn.jpg');
+  background-size: cover;
+  background-height: 100%;
+  background-width: 100%;
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 50px;
+  padding-left: 30px;
+  color: white;
+
+}
+
+#signup{
+  background-image: url('./images/SignUp.jpg');
+  background-size: cover;
+  background-height: 100%;
+  background-width: 100%;
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 250px;
+  padding-left: 800px;
+  letter-spacing: 3.5px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  color: #5b5b60;
+
+}
+
+#login {
+  margin-top: 125px;
+  margin-left: 100px;
+}
+#username-login {
+  font-size: 15px;
+  width: 200px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#password-login {
+  font-size: 15px;
+  width: 200px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#username-signup {
+  padding-bottom: 10px;
+  font-size: 15px;
+  width: 200px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#password-signup {
+  padding-left: 10px;
+  font-size: 15px;
+  width: 200px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#create-an-account {
+   position: absolute;
+   margin-top: -80px;
+   margin-left: -20px;
+   font-size: 20px;
+   text-align: center;
+   font-size: 30px;
+   font-family: 'Open Sans', sans-serif;
+
+}
+
+#sign-in-title {
+  font-size: 30px;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 130px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+
+#logout{
+  background-image: url('./images/Bye.jpg');
+  background-size: cover;
+  background-height: 100%;
+  background-width: 100%;
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: white;
+  letter-spacing: 3.5px;
+  font-size: 35px;
+  font-weight: 900;
+  letter-spacing: 4px;
+
+}
+#image-upload {
+  padding-top: 15px;
+  padding-left: 20px;
+  background-color: gray;
+  padding-bottom: 100%;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.drop-files {
+  padding-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+#username {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  padding-bottom: 0;
+
+}
+
+#password {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+
+}
+
+#login-button {
+  margin-top: 20px;
+  margin-left:60px;
+  width: 70px;
+  text-align: center;
+}
+
+#signup-button {
+  margin-top: 20px;
+  margin-left:60px;
+  width: 70px;
+  text-align: center;
+}
+
+#bye-text {
+  text-align: center;
+  margin-top: 250px;
+
+}
 .filter {
   text-align: right;
   margin-right: 18px;
 }
 
 #filter-button {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 180px;
 }
 #search {
@@ -47,16 +236,82 @@ body {
 
 #tile {
   background-color: #f3f5f6;
-  position: fixed;
   background-size: cover;
   background-height: 100%;
   background-width: 100%;
   min-height: 100%;
   min-width: 1024px;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   left: 0;
+}
+
+.Mapnotifier {
+  margin: 15px;
+}
+
+#add-location-input {
+  margin-left: 15px;
+  width: 175px;
+  height: 40px;
+}
+input.userComment {
+  max-width: 100px;
+}
+
+input.commentBlock {
+    min-height: 50px;
+}
+
+form.formComments {
+    display: grid;
+}
+
+input.submitComment {
+    margin-top: 10px;
+    max-width: 100px;
+}
+
+#location-name-big-map {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+#location-photo-big-map {
+  margin-bottom: 0px;
+}
+
+.popinput {
+  background-color: #f3f5f6 ;
+  max-width: 150px;
+  max-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#pop-input-button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  margin-top: 10px;
+
+}
+
+hr {
+   height: .1px;
+   border: none;
+}
+
+#comment-form {
+  margin-bottom: 20px;
+}
+
+
+
+.map-wrap :hover {
+  opacity: 0.5;
 }
 
 
@@ -70,9 +325,12 @@ body {
   text-align: center;
 }
 
+
+
+
 #input {
   margin: auto;
-  margin-left: 125px;
+  margin-left: 225px;
   margin-top: 215px;
   position: absolute;
 }
@@ -86,17 +344,41 @@ input[type="text"]{
 .locations-masonry {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
-  padding-bottom: 100px;
+/*  margin-left: -70px;
+  margin-right: 0px;*/
+  margin-bottom: 50px;
 }
 
 .explore-filter {
+  display: flex;
   padding-left: 100px;
   padding-bottom:5px;
   font-size: 15px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 900;
 }
+
+#big-map-filter {
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-bottom:10px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+}
+
+#big-map {
+  padding-top: 10px;
+   background-color: #f3f5f6;
+}
+#big-map-tip {
+  padding-top: 100px;
+  padding-left: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+}
+
 
 .img__img {
   padding-right: 50px;
@@ -138,7 +420,6 @@ input[type="text"]{
   font-size: 15px;
   color: #b5b7b9;
   background: #45484f;
-  position: fixed;
   background-size: cover;
   background-height: 100%;
   background-width: 100%;
@@ -156,31 +437,37 @@ input[type="text"]{
   position: relative;
 }
 
+
+
 .map-description {
   position: absolute;
-  top: 175px;
+  top: 180px;
   bottom: 0;
-  left: 5px;
+  left: 20px;
   right: 0;
   color: black;
   font-weight: 900;
-  font-size: 15px;
+  font-size: 20px;
   visibility: hidden;
   opacity: 0;
+  font-family: 'Open Sans', sans-serif;
+
 
   /* transition effect. not necessary */
   transition: opacity .2s, visibility .2s;
+  transition-duration: 3s;
 }
+
+
+
+
 
 .map-wrap:hover .map-description {
   visibility: visible;
   opacity: 1;
 }
 
-hr {
-    clear: both;
-    visibility: hidden;
-}
+
 
 .searched-location {
   font-family: 'Open Sans', sans-serif;
@@ -192,23 +479,27 @@ hr {
 
 #specific-locations {
   background-color: #f3f5f6;
-  position: fixed;
   background-size: cover;
   background-height: 100%;
   background-width: 100%;
   min-height: 100%;
   min-width: 1024px;
   width: 100%;
-  height: auto;
+  height: 100%;
   top: 0;
   left: 0;
 
 }
 #photographs {
+  height: 100%;
 
 }
-#photo-grid {
-  min-height: 100%;
+
+#comments {
+  height: 100%;
+  font-size: 10px;
+  margin-bottom: 200px;
+
 }
 
 .slider-list {
@@ -225,19 +516,18 @@ hr {
   font-family: 'Open Sans', sans-serif;
 }
 
+
 .username {
-  padding-left: 10px;
-  padding-bottom: 0px;
  font-family: 'Open Sans', sans-serif;
  font-size: 20px;
  margin: 0;
 }
 
 .user-comment {
-  padding-left: 10px;
+  padding-left: 20px;
   padding-bottom: 10px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   margin: 0;
 
 }
@@ -259,17 +549,21 @@ a:active {
     text-decoration: underline;
 }
 
+
+
 .NavBar {
+  border: 1px solid gray;
   display: flex;
   height: 40px;
-  background-color: #f9f9f9;
+  background-color: #e6e6e6;
+  margin-bottom: 15px;
 
 }
 
 
 .NavBar a {
   margin: 0 auto;
-  background-color: #f9f9f9;
+  background-color: #e6e6e6;
   color: #333333;
   font-family: 'Open Sans', sans-serif;
   font-weight: 900;

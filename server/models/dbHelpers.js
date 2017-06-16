@@ -1,12 +1,23 @@
 var pool = require('./dbConnection.js');
 
-exports.addUser = (username, cb) => {
-  var query = 'INSERT INTO users (username) VALUES ($1);';
-  pool.query(query, [username], function (err, result) {
+exports.addUser = (username, password, cb) => {
+  var query = 'INSERT INTO users (username, password) VALUES ($1, $2);';
+  pool.query(query, [username, password], function (err, result) {
     if (err) {
       cb(err, null);
     } else {
       cb(null, true);
+    }
+  });
+};
+
+exports.getUser = (username, cb) => {
+  var query = 'SELECT * FROM users WHERE username = $1;';
+  pool.query(query, [username], function (err, result) {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, result.rows);
     }
   });
 };
@@ -22,9 +33,9 @@ exports.addLocation = (name, coordinates, cb) => {
   });
 };
 
-exports.addPhoto = (locationId, userId, uri, cb) => {
-  var query = 'INSERT INTO photos (location_id, user_id, uri, date) VALUES ($1, $2, $3, CURRENT_TIMESTAMP);';
-  pool.query(query, [locationId, userId, uri], function (err, result) {
+exports.addPhoto = (locationId, username, uri, cb) => {
+  var query = 'INSERT INTO photos (location_id, user_id, uri, date) VALUES ($1, (SELECT id FROM users WHERE username = $2), $3, CURRENT_TIMESTAMP);';
+  pool.query(query, [locationId, username, uri], function (err, result) {
     if (err) {
       cb(err, null);
     } else {
@@ -44,9 +55,9 @@ exports.getPhotoUrl = (photoId, cb) => {
   });
 };
 
-exports.addLocationComment = (locationId, userId, content, cb) => {
-  var query = 'INSERT INTO comments (location_id, user_id, content, date) VALUES ($1, $2, $3, CURRENT_TIMESTAMP);';
-  pool.query(query, [locationId, userId, content], function (err, result) {
+exports.addLocationComment = (locationId, username, content, cb) => {
+  var query = 'INSERT INTO comments (location_id, user_id, content, date) VALUES ($1, (SELECT id FROM users WHERE username = $2), $3, CURRENT_TIMESTAMP);';
+  pool.query(query, [locationId, username, content], function (err, result) {
     if (err) {
       cb(err, null);
     } else {
@@ -89,7 +100,8 @@ exports.getLocationInfo = (locationId, cb) => {
 };
 
 exports.getLocationsAndCoverPhotos = (cb) => {
-  var query = 'SELECT categories.name AS category, locations.id AS id, locations.name AS name, locations.coordinates AS coordinates, uri \
+  var query = 'SELECT categories.name AS category, locations.id AS id, locations.name AS name, \
+  locations.coordinates AS coordinates, uri, locations.like_count AS likeCount, locations.comment_count AS commentCount \
   FROM locations, photos, categories \
   WHERE locations.cover_photo_id = photos.id \
   AND locations.category_id = categories.id;';
@@ -168,6 +180,24 @@ exports.updateLocationLikeCount = (cb) => {
   FROM counted c \
   WHERE c.target_class = 'location' \
   AND c.target_id = id;";
+  pool.query(query, function (err, result) {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, result.command + ' ' + result.rowCount);
+    }
+  });
+};
+
+exports.updateLocationCommentCount = (cb) => {
+  var query = "WITH counted AS ( \
+    SELECT location_id, \
+    COUNT(*) \
+    FROM comments \
+    GROUP BY location_id) \
+  UPDATE locations SET comment_count = c.count \
+  FROM counted c \
+  WHERE c.location_id = id;";
   pool.query(query, function (err, result) {
     if (err) {
       cb(err, null);

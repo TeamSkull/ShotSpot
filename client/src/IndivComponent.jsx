@@ -19,22 +19,25 @@ class IndivComponent extends React.Component {
       method: 'post',
       data: {locationId: location}
     }).then((results) => {
-      this.setState({location: results.data});
+      this.setState({
+        location: results.data,
+        sessionUser: results.data.sessionUser
+      });
     }).catch((error) => {
       console.log('This is an error from the IndivComponent page: ', error);
     });
   }
 
   render() {
-    // let mapPosition = [this.props.location.state.Latitude, this.props.location.state.Longitude];
+    // let location = this.props.match.params.id;
     return (
       <div className="container-fluid-fullwidth" id="specific-locations">
-         {/*<Map />*/}
-          {/*<Navigation />*/}
+        {/*<Map />*/}
+        <Navigation allState = {this.state} locationId={this.state.location.id}/>
         <hr></hr>
         <Photographs name= {this.state.location.name} photos={this.state.location.photos}/>
         <hr></hr>
-        <Comments name={this.state.location.name} comments={this.state.location.comments}/>
+        <Comments name={this.state.location.name} comments={this.state.location.comments} locId={this.props.match.params.id} sessionUser={this.state.sessionUser} />
       </div>
     );
   }

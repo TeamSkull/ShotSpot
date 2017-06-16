@@ -1,10 +1,9 @@
 import React from 'react';
-import axios from 'axios';
 
-class Filter extends React.Component {
+class BigMapFilter extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {currentValue: 'View All Categories', categories: ['Street Art', 'Astrophotography', 'Architecture', 'Landscape', 'Cityscape', 'Tourist', 'Nature']};
+    this.state = {currentValue: 'View All Categories'};
   }
 
   componentWillMount() {
@@ -17,12 +16,13 @@ class Filter extends React.Component {
 
   render() {
     let locNames = {};
+    
     locNames['View All Categories'] = 'default';
-    this.state.categories.forEach((value, i) => {
-      locNames[value] = i;
-    });
+    (this.props.coordObjs.length > 1) ? this.props.coordObjs.forEach((value, i) => {
+      locNames[value.category] = i;
+    }) : console.log('Waiting to get data');
     return (
-      <div>
+      <div className="big-map-filter">
         <select name='categories' className="ui fluid dropdown" multiple="" id="filter-button"value={this.props.initValue} onChange={this.props.handleChangeFilter}>
           {Object.keys(locNames).map((value, i) => { return (this.props.initValue !== value) ? <option key={i} value={value}>{value}</option> : <option key={i} value={value} selected  >{value}</option>})}
         </select>
@@ -31,4 +31,4 @@ class Filter extends React.Component {
   }
 }
 
-export default Filter;
+export default BigMapFilter;

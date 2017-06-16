@@ -23,7 +23,7 @@ var getPhotoUrl = function(photoId, cb) {
   });
 }
 
-exports.upload = function(title, fileLocation) {
+exports.upload = function(title, fileLocation, cb) {
   var uploadOptions = {
     photos: [{
       title: title,
@@ -33,14 +33,13 @@ exports.upload = function(title, fileLocation) {
 
   Flickr.upload(uploadOptions, flickrOptions, function(err, result) {
     if(err) {
-      console.log(err);
+      cb(err, null);
     } else {
       getPhotoUrl(result, (err, url) => {
         if (err) {
-          console.log(err);
+          cb(err, null);
         } else {
-          console.log(url);
-          return url;
+          cb(null, url);
         }
       });
     }

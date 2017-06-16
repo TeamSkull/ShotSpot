@@ -25,6 +25,7 @@ CREATE TABLE locations (
   coordinates VARCHAR,
   cover_photo_id BIGINT DEFAULT 0,
   like_count INTEGER DEFAULT 0,
+  comment_count INTEGER DEFAULT 0,
   PRIMARY KEY (id)
 );
 
@@ -38,6 +39,7 @@ DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id BIGSERIAL NOT NULL,
   username VARCHAR(20),
+  password TEXT,
   PRIMARY KEY (id)
 );
 
@@ -52,7 +54,7 @@ CREATE TABLE photos (
   id BIGSERIAL NOT NULL,
   location_id INTEGER REFERENCES locations(id),
   user_id INTEGER REFERENCES users(id),
-  uri VARCHAR(150),
+  uri TEXT,
   date DATE,
   like_count INTEGER DEFAULT 0,
   PRIMARY KEY (id)
@@ -99,7 +101,7 @@ DROP TABLE IF EXISTS quotes;
 
 CREATE TABLE quotes (
   id BIGSERIAL NOT NULL,
-  content VARCHAR(150),
+  content TEXT,
   PRIMARY KEY (id)
 );
 
@@ -116,6 +118,19 @@ CREATE TABLE landing_images (
   name VARCHAR(20),
   PRIMARY KEY (id)
 );
+
+-- ---
+-- Table 'session'
+-- 
+-- ---
+
+CREATE TABLE "session" (
+  "sid" varchar NOT NULL COLLATE "default",
+	"sess" json NOT NULL,
+	"expire" timestamp(6) NOT NULL
+)
+WITH (OIDS=FALSE);
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
 
 INSERT INTO photos (id, uri) VALUES (0, 'https://c1.staticflickr.com/5/4208/35000849792_1f62b924ba.jpg');
 

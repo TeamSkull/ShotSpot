@@ -8,7 +8,7 @@ const queryString = require('query-string');
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchValue: '', Latitude: 0, Longitude: 0, submitted: false};
+    this.state = {searchValue: '', Latitude: 0, Longitude: 0, submitted: false, city: ''};
   }
 
   updateInputValue (e) {
@@ -23,7 +23,7 @@ class Main extends React.Component {
       method: 'post',
       data: {search: this.state.searchValue}
     }).then((results) => {
-      this.setState({Latitude: results.data.Latitude, Longitude: results.data.Longitude, submitted: results.data.Search});
+      this.setState({Latitude: results.data.Latitude, Longitude: results.data.Longitude, submitted: results.data.Search, city: results.data.City});
     }).catch((error) => {
       console.log('This is an error from the axios call in Main.jsx: ', error);
     });
@@ -36,7 +36,7 @@ class Main extends React.Component {
       let filterVal = {filter: 'View All Categories'}
       const stringified = queryString.stringify(coordinates);
       const stringfil = queryString.stringify(filterVal);
-      return <Redirect push to={{pathname: '/TilePage/' + stringified, state: {searchedLocation: this.state.searchValue, Latitude: this.state.Latitude, Longitude: this.state.Longitude, stringy: stringified, filter: stringfil}}} />;
+      return <Redirect push to={{pathname: '/TilePage/' + stringified, state: {searchedLocation: this.state.searchValue, Latitude: this.state.Latitude, Longitude: this.state.Longitude, stringy: stringified, filter: stringfil, city: this.state.city}}} />;
     }
     return (
       <div className="container" id="home">
