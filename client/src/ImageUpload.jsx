@@ -24,9 +24,9 @@ class ImageUpload extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="container-fluid-fullwidth" id="image-upload">
         <Dropzone onDrop={this.onDrop}>
-          <div>Try dropping some files here, or click to select files to upload.</div>
+          <div id="drop-files">Drag images here, or click to select images to upload.</div>
         </Dropzone>
       </div>
           );

@@ -173,7 +173,19 @@ body {
   letter-spacing: 4px;
 
 }
+#image-upload {
+  padding-top: 15px;
+  padding-left: 20px;
+  background-color: gray;
+  padding-bottom: 100%;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.drop-files {
+  padding-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
 #username {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
