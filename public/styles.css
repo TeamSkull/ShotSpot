@@ -248,9 +248,14 @@ body {
 }
 
 .Mapnotifier {
-  margin: 10px;
+  margin: 15px;
 }
 
+#add-location-input {
+  margin-left: 15px;
+  width: 175px;
+  height: 40px;
+}
 input.userComment {
   max-width: 100px;
 }

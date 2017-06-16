@@ -133,9 +133,9 @@ class BigMap extends React.Component {
                 <Popup>
                   <span>
                     <form id="input-form">
-                      <input onChange={this.locationPopupText} placeholder="Enter location name"></input>
+                      <input className="ui input" id="add-location-input"onChange={this.locationPopupText} placeholder="Enter location name"></input>
                       <Filter className="PopFilter" initValue={filterPopupInitVal} handleChangeFilter={this.handleChangePopupFilter}/>
-                      <input onClick={this.popupSubmit} type="submit" className="ui teal button" id="pop-input-button"></input>
+                      <input onClick={this.popupSubmit} type="submit" value="Add Location"className="ui teal button" id="pop-input-button"></input>
                     </form>
                   </span>
                 </Popup>
