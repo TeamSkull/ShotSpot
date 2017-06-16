@@ -145,7 +145,7 @@ class BigMap extends React.Component {
                 <div key={i}>
                   <Marker position={[location.coordinates.latitude, location.coordinates.longitude]}>
                       <Popup>
-                        <span><img onClick={this.handlePopImageClick.bind(this,location.id)} src={location.coverPhoto} />> <hr/> {location.name}</span>
+                        <span><img onClick={this.handlePopImageClick.bind(this,location.id)} src={location.coverPhoto} id="location-photo-big-map"/> <hr/> <h id="location-name-big-map">{location.name}</h></span>
                       </Popup>
                   </Marker>
                 </div>

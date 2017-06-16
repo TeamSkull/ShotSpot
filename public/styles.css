@@ -273,6 +273,18 @@ input.submitComment {
     max-width: 100px;
 }
 
+#location-name-big-map {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+#location-photo-big-map {
+  margin-bottom: 0px;
+}
+
 .popinput {
   background-color: #f3f5f6 ;
   max-width: 150px;
@@ -285,6 +297,11 @@ input.submitComment {
   font-size: 10px;
   margin-top: 10px;
 
+}
+
+hr {
+   height: .1px;
+   border: none;
 }
 
 #comment-form {
