@@ -1,10 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import { Redirect } from 'react-router';
+import Index from './index.jsx'
 
 class Login extends React.Component {
   constructor(props){
     super(props);
-    this.state = {username: '', password: ''}
+    this.state = {username: '', password: '', trigger: false}
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -17,10 +19,12 @@ class Login extends React.Component {
       url: '/login',
       data: userdata
     }).then((results) => {
-      console.log(results, 'from login results')
+      console.log(results);
     }).catch((error) => {
       console.log(error, 'This is from login');
     })
+
+    this.setState({trigger: true})
   }
 
   handleUserName(e){
@@ -32,6 +36,10 @@ class Login extends React.Component {
   }
 
   render(){
+    console.log(this.state.trigger);
+    if(this.state.trigger){
+      return <Redirect push to ={{pathname:'/'}} />
+    }
     return(
       <div id='signin' className="ui input focus">
       <h1 id="sign-in-title">Sign In </h1>
