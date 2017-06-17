@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon server/app.js",
     "react-dev": "webpack --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack && node coverPhotoWorker.js && node likeCountWorker.js"
   },
   "dependencies": {
     "axios": "^0.16.1",
